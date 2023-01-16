@@ -17,13 +17,12 @@ export default class Notification {
 
   render(type, price) {
     const template = `
-<div class="notification type-${type} ${classNames({
-  "is-danger": type === Notification.types.HAWAIIAN,
-})}">
-  <button class="delete">${type}</button>
-  🍕 <span class="type">${type}</span> (<span class="price">${formatCurrency(price)}</span>) has been added to your order.
-</div>
-    `;
+    <div class="notification type-${type} ${classNames({
+      "is-danger": type === Notification.types.HAWAIIAN,
+    })}">
+    <button class="delete"></button>
+    🍕 <span class="type">${type}</span> (<span class="price">${formatCurrency(price)}</span>) has been added to your order.
+    </div>`;
 
     this.container.innerHTML = template;
 
@@ -35,5 +34,4 @@ export default class Notification {
   empty() {
     this.container.innerHTML = "";
   }
-
 }
